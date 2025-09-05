@@ -1,0 +1,188 @@
+/* ===== RESET CSS ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #ff6600;
+  --primary-light: #ff9900;
+  --primary-lighter: #ffcc00;
+  --bg-dark: #111;
+  --bg-card: #1c1c1c;
+  --bg-footer: #111;
+  --text-light: #fff;
+  --text-muted: #ccc;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: url("images/bg1.png") no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-light);
+}
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(90deg, #af8e7a, #535041);
+  padding: 15px;
+  text-align: center;
+  color: #3a0a0a;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* ===== DANH SÁCH GAME ===== */
+.game-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.game-card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center; /* 👉 căn giữa nội dung trong card */
+}
+
+.game-card h3 {
+  margin: 10px 0;
+  color: var(--primary-lighter);
+}
+
+.game-card p {
+  margin: 8px 0;
+}
+
+.game-card .btn {
+  margin-top: 12px;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(255,255,255,0.2);
+}
+.game-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+.game-card h3 {
+  margin: 10px 0;
+  color: var(--primary-lighter);
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background 0.3s, transform 0.2s;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background: linear-gradient(90deg, var(--primary-light), var(--primary-lighter));
+  transform: translateY(-2px);
+}
+
+/* ===== GIFTCODE BUTTON CONTAINER ===== */
+.giftcode-btn {
+  text-align: center;
+  margin: 20px;
+}
+
+/* ===== POPUP GIFTCODE ===== */
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.popup-content {
+  background: #222;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+.popup-content h2 {
+  margin-bottom: 15px;
+  color: var(--primary-lighter);
+}
+.popup-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+.popup-content input:focus {
+  outline: 2px solid var(--primary-light);
+}
+
+/* Nút đóng popup */
+.close-btn {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: var(--text-light);
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: var(--primary-lighter);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: var(--bg-footer);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+footer a {
+  color: var(--primary-light);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: var(--primary-lighter);
+  text-decoration: underline;
+}
+
+/* Hidden label cho screen reader */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
